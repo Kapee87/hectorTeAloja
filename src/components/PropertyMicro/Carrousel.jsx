@@ -1,28 +1,21 @@
-import React, { useState } from 'react'
-import { pics } from '../mockups/picsMockUp.json'
+import React, { useEffect, useState } from 'react'
+import { pics } from '../../mockups/picsMockUp.json'
 
 function Carrousel() {
+    
     const [picArray, setPicArray] = useState(pics)
-    const [galeryIndex, setGaleryIndex] = useState(0)
+    const [galeryIndex, setGaleryIndex] = useState(picArray.length)
 
+    const handlePrev = () => {
+        galeryIndex < picArray.length ? setGaleryIndex(prev => prev + 7) : setGaleryIndex(-(picArray.length))
+    }
     const handleNext = () => {
-        galeryIndex > 10 ? setGaleryIndex(prev => prev - 1) : setGaleryIndex(picArray.length - 1)
+        galeryIndex > -(picArray.length) ? setGaleryIndex(prev => prev - 10) : setGaleryIndex(picArray.length)
     }
-    const handlePrev = () => {
-        galeryIndex < picArray.length - 10 ? setGaleryIndex(prev => prev + 1) : setGaleryIndex(1)
-    }
-
-/*     const handleNext = () => {
-        setGaleryIndex((prev) => (prev + 1) % picArray.length);
-    };
-
-    const handlePrev = () => {
-        setGaleryIndex((prev) => (prev - 1 + picArray.length) % picArray.length);
-    }; */
 
     return (
-        <div className='container flex justify-center items-center flex-col p-4'>
-            <div className="carousel h-[65vh] w-full">
+        <div className='container flex justify-center items-center flex-col p-4 relative'>
+            <div className="carousel h-[65vh] w-full rounded-lg">
                 {picArray.map((pic, index) => (
                     <div id={index} className="carousel-item w-full"
                         key={index}>
@@ -30,22 +23,21 @@ function Carrousel() {
                     </div>
                 ))}
             </div>
-
-            <div className={`flex justify-center w-full py-2 gap-2 overflow-hidden relative  `}>
-                <div className='flex' style={{ width: `${picArray.length * 96}px`, transform: `translateX(-${galeryIndex}%)` }} >
+            <div className={`flex justify-center w-full py-2 gap-2 overflow-hidden`}>
+                <div className={`flex transition-transform duration-500`} style={{ width: `${picArray.length * 96}px`, transform: `translateX(${galeryIndex}%)` }} >
                     {
                         picArray.map((pic, index) => (
                             <a href={`#${index}`} className="btn btn-lg bg-cover" key={`index ${index}`} id={`index ${index}`}
                                 style={{ backgroundImage: `url(${pic})` }} >
-                                {/* <img src={pic} alt="Imagen pequeña para elegir y mostrar en la imagen grande" className='w-full h-full' /> */}
                             </a>
                         ))
                     }
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <button className="btn btn-xs btn-circle" onClick={handlePrev} >❮</button>
-                    <button className="btn btn-xs btn-circle" onClick={handleNext} >❯</button>
-                </div>
+
+            </div>
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
+                <button className="btn btn-xs btn-circle" onClick={handlePrev} >❮</button>
+                <button className="btn btn-xs btn-circle" onClick={handleNext} >❯</button>
             </div>
         </div>
     )

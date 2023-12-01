@@ -12,6 +12,22 @@ export const units = [
             "terminal": 10
         },
         "picArray": pics.map(u => u),
+        "servicesBoolean": [
+            { 'estacionamiento': true },
+            { 'tv': true },
+            { 'wifi': true },
+            { 'split': false },
+            { 'entradaPrivada': true },
+            { 'ventiladorTecho': false },
+            { 'ventiladorPie': false },
+            { 'cocina': false },
+            { 'microondas': false },
+            { 'parrilaTechada': false },
+            { 'parrillaOutdoor': false },
+            { 'lavarropas': false },
+            { 'secarropas': false },
+            { 'patio': false },
+        ]
     },
     {
         "id": 1,

@@ -33,7 +33,7 @@ function Property() {
     };
 
     return (
-        <section className='min-h-screen w-full -mt-1 md:m-0 pt-[12vh] sm:pt-[15vh] md:px-10
+        <section className='min-h-screen w-full -mt-1 md:m-0 pt-[12vh] sm:pt-[15vh] lg:pt-5 md:px-10
                             flex flex-col lg:flex-row items-center lg:flex-wrap'>
             <div className='w-full lg:w-1/2 flex flex-col items-center'>
                 <h2 className='text-4xl'>Aca van los detalles de la propiedad numero {idProperty}</h2>

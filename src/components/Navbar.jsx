@@ -1,5 +1,5 @@
 import React from 'react';
-import { units } from '../mockups/propsMockUp';
+import { units } from '../mockups&utils/propsMockUp';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
       <a href="/">Home</a>
       {
         units?.map(unit => (
-          <NavLink to={`/propiedad/${unit.id+1}`} key={unit.title}>{unit.title} </NavLink>
+          <NavLink to={`/propiedad/${unit.id + 1}`} key={unit.title}>{unit.title} </NavLink>
         ))
       }
 

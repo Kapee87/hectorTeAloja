@@ -1,6 +1,6 @@
 // src/pages/Landing.js
 import React from 'react';
-import { units } from '../mockups/propsMockUp';
+import { units } from '../mockups&utils/propsMockUp';
 import { NavLink } from 'react-router-dom';
 import { useFirstLoad } from '../hooks/useFirstLoad';
 

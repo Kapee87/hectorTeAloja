@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { pics } from '../../mockups/picsMockUp.json'
+import { pics } from '../../mockups&utils/picsMockUp.json'
 import logoH from '../../assets/logoH.png'
 
 function Carrousel() {
@@ -29,8 +29,8 @@ function Carrousel() {
                 }
             </div>
             {
-              
-              picArray.length > 0 ?
+
+                picArray.length > 0 ?
 
                     (
                         <>

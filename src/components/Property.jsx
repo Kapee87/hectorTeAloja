@@ -12,7 +12,7 @@ import { faArrowAltCircleUp, faArrowUp, faUpDown } from '@fortawesome/free-solid
 function Property() {
     const idProperty = useParams('id').id
     const [showScrollButton, setShowScrollButton] = useState(false);
-
+    
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;

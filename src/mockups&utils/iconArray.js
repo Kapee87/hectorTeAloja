@@ -1,52 +1,62 @@
+import { faArrowAltCircleRight, faBan, faClock, faE, faFan, faFireBurner, faFireFlameCurved, faKitchenSet, faPaw, faPersonShelter, faRightFromBracket, faRightToBracket, faToilet, faTree, faTv, faUserGroup, faWater, faWifi } from '@fortawesome/free-solid-svg-icons'
+
 export const iconArray = [
     {
-        'name': 'guests',
-        'icon': 'faUserGroup'
+        'name': 'huespedes',
+        'icon': faUserGroup
     },
     {
-        'name': 'bedrooms',
-        'icon': 'faPersonShelter'
+        'name': 'ambientes',
+        'icon': faPersonShelter
     },
     {
-        'name': 'bathrooms',
-        'icon': 'faToilet'
+        'name': 'baños',
+        'icon': faToilet
     },
     {
         'name': 'checkIn',
-        'icon': 'faRightToBracket',
+        'icon': faRightToBracket,
         'flip': true
     },
     {
         'name': 'checkOut',
-        'icon': 'faRightToBracket'
+        'icon': faRightToBracket
     },
     {
         'name': 'vajillaCompleta',
-        'icon': 'faKitchenSet'
+        'icon': faKitchenSet
     },
     {
         'name': 'tv',
-        'icon': 'faTv'
+        'icon': faTv
     },
     {
         'name': 'wifi',
-        'icon': 'faWifi'
+        'icon': faWifi
     },
     {
         'name': 'ventilador',
-        'icon': 'faFan'
+        'icon': faFan
     },
     {
         'name': 'cocina',
-        'icon': 'faFireBurner'
+        'icon': faFireBurner
     },
     {
         'name': 'parrila',
-        'icon': 'faFireFlameCurved'
+        'icon': faFireFlameCurved
     },
     {
         'name': 'patio',
-        'icon': 'faTree'
+        'icon': faTree
+    },
+    {
+        'name': 'mascotas',
+        'icon': faPaw
+    },
+    {
+        'name': 'estacionamiento',
+        'icon': faE
     },
 
 ]

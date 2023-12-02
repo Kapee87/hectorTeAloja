@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-white fixed top-0 w-full flex flex-col md:flex-row flex-wrap justify-center md:justify-between p-4 z-50">
       <div className='flex flex-wrap justify-center'>
-        <a href="/" className="text-xl font-bold text-white">
+        <a href="/" className="text-xl font-bold text-white flex items-center">
           <img src={logo} alt="logo de hector te aloja" className='h-9' />
         </a>
         <Navbar />

@@ -14,7 +14,7 @@ function PropertyDetails() {
 
 
     useEffect(() => {
-        axios.get(`${url}${propertyId}`)
+        axios.get(`${url}/propiedades/${propertyId}`)
             .then(res => {
                 const booleanToRender = res.data.property.servicesBoolean.map(s => iconArray.filter(i => i.name == s))
                 const notBooleanToRender = []

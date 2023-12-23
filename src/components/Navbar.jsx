@@ -28,7 +28,9 @@ const Navbar = () => {
         </ul>
       </div>
 
-    </nav>
+      <NavLink to='/nuevapropiedad' className='btn btn-ghost'>Crear Propiedad</NavLink>
+
+    </nav >
   );
 };
 

@@ -4,7 +4,8 @@ export const UserContext = createContext({
     userData: null,
     properties: null,
     setUserData: () => { },
-    setProperties: () => { }
+    setProperties: () => { },
+    token: null
 })
 
 export const UserContextProvider = ({ children, initial = {} }) => {

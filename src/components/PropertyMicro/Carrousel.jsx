@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { pics } from '../../mockups&utils/picsMockUp.json'
+import React, { useState } from 'react'
 import logoH from '../../assets/logoH.png'
 
-function Carrousel() {
+function Carrousel({ property }) {
 
-    const [picArray, setPicArray] = useState(pics)
+    const [picArray, setPicArray] = useState(property?.gallery ? property.gallery : [])
     const [galeryIndex, setGaleryIndex] = useState(picArray.length)
 
     const handlePrev = () => {
@@ -14,23 +13,24 @@ function Carrousel() {
         galeryIndex > -(picArray.length) ? setGaleryIndex(prev => prev - 10) : setGaleryIndex(picArray.length)
     }
 
+
     return (
         <div className='container flex justify-center items-center flex-col p-4 relative'>
             <div className="carousel h-[65vh] w-full rounded-lg">
                 {
-                    picArray.length > 0 ?
+                    picArray?.length > 0 ?
                         picArray.map((pic, index) => (
                             <div id={index} className="carousel-item w-full"
                                 key={index}>
                                 <img src={pic} className="w-full" alt={`Imagen ${index}`} />
                             </div>
                         ))
-                        : <img src={logoH} alt="Logo para cuando no existe imagen" />
+                        : <img src={logoH} alt="Logo para cuando no existe imagen" className='object-cover' />
                 }
             </div>
             {
 
-                picArray.length > 0 ?
+                picArray?.length > 0 ?
 
                     (
                         <>
@@ -59,26 +59,3 @@ function Carrousel() {
 }
 
 export default Carrousel
-
-
-
-{/* <div className='w-full h-[40vh] border-2 bg-cover bg-no-repeat bg-center rounded-md' style={{ backgroundImage: `url(${pics[currentImg]})` }}>
-                </div> */}
-
-{/*  <div className='rounded-lg w-full  overflow-hidden flex items-center relative'>
-                <div className='flex h-28' style={{ width: `${picArray.length * 96}px` }}>
-                    {picArray.map((pic, index) => (
-                        <button
-                            onClick={() => handleChangeImg(index)}
-                            className='h-full w-96 flex items-center object-cover'
-                            key={index}
-                        >
-                            <img src={pic} alt="Imagen pequeña para elegir y mostrar en la imagen grande" className='w-full h-full' />
-                        </button>
-                    ))}
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <button className="btn btn-circle">❮</button>
-                        <button className="btn btn-circle">❯</button>
-                    </div>
-                </div>
-            </div> */}

@@ -25,7 +25,7 @@ function ScrollToTopButton() {
     };
 
     return (
-        <div className='fixed bottom-4 right-4 hover:[&_button]:bg-gray-700'>
+        <div className='fixed bottom-4 right-4 hover:[&_button]:bg-gray-700 z-10'>
             {showScrollButton && (
                 <button
                     className='bg-gray-800 shadow-gray-600 shadow-inner text-white px-4 py-2 rounded-full text-xs transition-all'

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import Carrousel from './PropertyMicro/Carrousel';
-import PropertyDetails from './PropertyMicro/PropertyDetails';
 import { usePropHandler } from '../hooks/usePropHandler';
+import Carrousel from '../components/PropertyMicro/Carrousel';
+import PropertyDetails from '../components/PropertyMicro/PropertyDetails';
+
 
 function Property() {
     const idProperty = useParams('id').id
@@ -18,7 +19,7 @@ function Property() {
                             flex flex-col lg:flex-row items-center lg:flex-wrap px-8'>
             <h2 className='text-4xl w-full'>Aca van los detalles de la propiedad {property?.name}</h2>
             <div className='w-full lg:w-1/2 flex flex-col items-center'>
-                <Carrousel />
+                <Carrousel property={property} />
             </div>
             <div className='lg:w-1/2 text-sm text-center sm:text-left px-2 sm:px-0 '>
                 <PropertyDetails property={property} />

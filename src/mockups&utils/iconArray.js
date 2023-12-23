@@ -43,7 +43,7 @@ export const iconArray = [
         'icon': faFireBurner
     },
     {
-        'name': 'parrila',
+        'name': 'parrilla',
         'icon': faFireFlameCurved
     },
     {

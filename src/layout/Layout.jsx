@@ -9,7 +9,7 @@ function Layout() {
     return (
         <div>
             <Header />
-            <div className='mt-40 sm:mt-16 md:m-0 min-h-[93vh] '>
+            <div className='mt-36 sm:mt-16 md:my-0 min-h-[93vh] md:mx-20'>
                 <Outlet />
             </div>
             <ScrollToTopButton />

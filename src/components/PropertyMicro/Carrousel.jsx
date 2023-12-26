@@ -18,7 +18,7 @@ function Carrousel({ property }) {
 
     return (
         <div className='container flex justify-center items-center flex-col p-4 relative'>
-            <div className="carousel h-[65vh] w-full rounded-lg">
+            <div className="carousel w-full rounded-lg">
                 {
                     picArray?.length > 0 ?
                         picArray.map((pic, index) => (
@@ -48,10 +48,12 @@ function Carrousel({ property }) {
                                 </div>
 
                             </div>
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
-                                <button className="btn btn-xs btn-circle" onClick={handlePrev} >❮</button>
-                                <button className="btn btn-xs btn-circle" onClick={handleNext} >❯</button>
-                            </div>
+                            {picArray.length > 5 &&
+                                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
+                                    <button className="btn btn-xs btn-circle" onClick={handlePrev} >❮</button>
+                                    <button className="btn btn-xs btn-circle" onClick={handleNext} >❯</button>
+                                </div>
+                            }
                         </>
                     )
                     : ''

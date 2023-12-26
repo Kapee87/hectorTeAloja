@@ -7,8 +7,10 @@ import { UserContext } from '../context/UserContextB'
 import { uploadFile } from '../firebase/config'
 import { v4 } from 'uuid'
 import { faX } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 
 function NewProperty() {
+    const navigate = useNavigate()
     const { token } = useContext(UserContext)
     const [tempGallery, setTempGallery] = useState([])
     const [sendGallery, setSendGallery] = useState([])
@@ -53,7 +55,7 @@ function NewProperty() {
         }
         console.log(newProperty);
         createProp(newProperty, token)
-
+        navigate('/')
 
     }
 

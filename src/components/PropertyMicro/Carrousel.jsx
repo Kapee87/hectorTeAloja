@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logoH from '../../assets/logoH.png'
 
 function Carrousel({ property }) {
-
-    const [picArray, setPicArray] = useState(property?.gallery ? property.gallery : [])
+    const [picArray, setPicArray] = useState([])
     const [galeryIndex, setGaleryIndex] = useState(picArray.length)
 
     const handlePrev = () => {
@@ -12,6 +11,9 @@ function Carrousel({ property }) {
     const handleNext = () => {
         galeryIndex > -(picArray.length) ? setGaleryIndex(prev => prev - 10) : setGaleryIndex(picArray.length)
     }
+    useEffect(() => {
+        setPicArray(property?.gallery ? property.gallery : [])
+    }, [property])
 
 
     return (

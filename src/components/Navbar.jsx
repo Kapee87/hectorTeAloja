@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserContextB';
 import { usePropHandler } from '../hooks/usePropHandler';
 
 const Navbar = () => {
-  const { properties, setProperties } = useContext(UserContext)
+  const { properties, setProperties, token } = useContext(UserContext)
   const { getProps } = usePropHandler()
 
   useEffect(() => {
@@ -28,7 +28,9 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <NavLink to='/nuevapropiedad' className='btn btn-ghost'>Crear Propiedad</NavLink>
+      {
+        token && <NavLink to='/nuevapropiedad' className='btn btn-ghost'>Crear Propiedad</NavLink>
+      }
 
     </nav >
   );

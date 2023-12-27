@@ -21,9 +21,9 @@ const Landing = () => {
     getProps(setProperties)
   }, [])
 
-  useEffect(() => {
-    console.log(properties);
-  }, [properties])
+  // useEffect(() => {
+  //   console.log(properties);
+  // }, [properties])
 
 
 

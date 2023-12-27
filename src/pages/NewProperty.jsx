@@ -88,8 +88,8 @@ function NewProperty() {
     }, [tempGallery, sendGallery])
     return (
         <div className="hero min-h-screen bg-base-200 flex flex-col">
-            <form action="" className='mt-[20vh] flex flex-wrap md:flex-col gap-8 p-4 md:p-10 rounded-lg md:w-3/4 mb-10
-            [&_textarea]:rounded-lg [&_input]:rounded-lg [&_input]:px-4 [&_input]:py-1 [&_input]:text-white border-2 ' onSubmit={handleCreateProp}>
+            <form action="" className='mt-[20vh] flex flex-wrap md:flex-col gap-8 p-4 md:p-10 rounded-lg md:w-3/4 mb-10 border-2
+            [&_textarea]:rounded-lg [&_input]:rounded-lg [&_input]:px-4 [&_input]:py-1  [&_input]:text-black dark:[&_input]:text-white ' onSubmit={handleCreateProp}>
                 <div className='flex flex-wrap gap-5 [&_label]:flex [&_label]:flex-col [&_label]:md:flex-row [&_label]:md:gap-3 [&_label]:items-center '>
                     <label htmlFor="">
                         Imagen:

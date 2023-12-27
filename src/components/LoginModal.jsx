@@ -49,7 +49,7 @@ const LoginModal = () => {
       <button onClick={() => setShowModal(true)}>{token ? '🔓' : '🔒'} </button>
       {showModal && (
         <div className='fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center'>
-          <div className="bg-gray-200 p-8 md:p-16 flex flex-col  md:w-1/2 items-center relative rounded-xl gap-3">
+          <div className="bg-gray-200 p-8 md:p-16 flex flex-col  md:w-1/2 items-center relative rounded-xl gap-3 font-bold [&_input]:text-black dark:[&_input]:text-white ">
             <button onClick={() => setShowModal(false)} className='absolute top-4 right-8'>
               ✖️
             </button>

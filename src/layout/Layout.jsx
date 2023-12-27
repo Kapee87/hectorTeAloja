@@ -7,9 +7,9 @@ import ScrollToTopButton from '../components/LayoutMicro/ScrollToTopButton'
 
 function Layout() {
     return (
-        <div>
+        <div className='bg-base-200'>
             <Header />
-            <div className='mt-36 sm:mt-16 md:my-0 min-h-[93vh] md:mx-20'>
+            <div className='mt-36 sm:mt-16 md:my-0 min-h-[93vh] md:mx-20 '>
                 <Outlet />
             </div>
             <ScrollToTopButton />

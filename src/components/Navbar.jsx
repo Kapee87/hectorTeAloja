@@ -27,7 +27,8 @@ const Navbar = () => {
 
       <div className="dropdown dropdown-hover">
         <div tabIndex={0} role="button" className="btn btn-ghost m-1">Propiedades 🔻</div>
-        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 dark:text-white text-gray-800 font-bold 
+         ">
           {properties?.map(unit => (
             <li key={unit._id}>
               <NavLink to={`/propiedad/${unit._id}`} className='dropdown-open' >{unit.name} </NavLink>

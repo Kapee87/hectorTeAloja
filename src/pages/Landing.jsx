@@ -14,11 +14,15 @@ const Landing = () => {
   const handleDelete = (e, id) => {
     e.preventDefault()
     deleteProp(id, token)
-    
+
   }
 
   useEffect(() => {
-    getProps(setProperties)
+    try {
+      getProps(setProperties)
+    } catch (error) {
+      console.log(error);
+    }
   }, [])
 
   // useEffect(() => {
@@ -33,7 +37,7 @@ const Landing = () => {
       <h1 className="text-2xl font-bold mb-4">Alquiler de Duplex en Las Toninas</h1>
       <div className='flex flex-wrap gap-4 justify-center '>
         {
-          properties?.map((prop) => (
+          properties.length > 0 ? properties?.map((prop) => (
             < NavLink to={`/propiedad/${prop._id}`} className="w-fit" key={prop._id} >
 
               <div className='border-2 rounded-lg inline-block'>
@@ -51,6 +55,7 @@ const Landing = () => {
               </div>
             </NavLink>
           ))
+            : <h4>No hay propiedades cargadas</h4>
         }
       </div>
     </div >

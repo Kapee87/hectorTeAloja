@@ -7,10 +7,15 @@ import { deleteFile } from "../firebase/config";
 export function usePropHandler() {
 
     const getProps = async (setProperties) => {
-        const { data } = await axios(`${urlProps}`)
-        // console.log(data);
-        setProperties(data.properties)
-        return data.properties
+        try {
+            const { data } = await axios(`${urlProps}`)
+            // console.log(data);
+            data.properties ? setProperties(data.properties) : setProperties([])
+            if (data.properties) return data.properties
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const getPropById = async (setProperty, id) => {

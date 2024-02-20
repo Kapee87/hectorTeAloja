@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import LoginModal from './LoginModal';
 import logo from '../assets/logoH.png'
+import ThemeBtn from './LayoutMicro/ThemeBtn';
 
 
 const Header = () => {
